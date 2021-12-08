@@ -1,0 +1,1 @@
+Plug 'qpkorr/vim-bufkill'
