@@ -19,6 +19,7 @@ source ~/.config/nvim/plugins/vim-gutentags.vim
 source ~/.config/nvim/plugins/vim-jack-in.vim
 source ~/.config/nvim/plugins/vim-polygot.vim
 source ~/.config/nvim/plugins/vim-syntax-extra.vim
+source ~/.config/nvim/plugins/spacemacs-theme.vim
 
 call plug#end()
 doautocmd User PlugLoaded
@@ -26,6 +27,10 @@ doautocmd User PlugLoaded
 "-----------------------------------------------------------------------------
 " General Settings
 "-----------------------------------------------------------------------------
+set termguicolors
+set background=dark
+colorscheme spacemacs-theme
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -47,7 +52,6 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set background=dark
 set hlsearch
 set signcolumn=yes
 set colorcolumn=80
