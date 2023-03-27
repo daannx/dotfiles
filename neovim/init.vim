@@ -20,6 +20,7 @@ source ~/.config/nvim/plugins/vim-jack-in.vim
 source ~/.config/nvim/plugins/vim-polygot.vim
 source ~/.config/nvim/plugins/vim-syntax-extra.vim
 source ~/.config/nvim/plugins/spacemacs-theme.vim
+"source ~/.config/nvim/plugins/indent-blankline.vim
 
 call plug#end()
 doautocmd User PlugLoaded
@@ -27,9 +28,10 @@ doautocmd User PlugLoaded
 "-----------------------------------------------------------------------------
 " General Settings
 "-----------------------------------------------------------------------------
-set termguicolors
-set background=dark
-colorscheme spacemacs-theme
+"set termguicolors
+"set background=dark
+"colorscheme spacemacs-theme
+"colorscheme gruvbox
 
 set tabstop=4
 set softtabstop=4
@@ -54,10 +56,11 @@ set updatetime=300
 set shortmess+=c
 set hlsearch
 set signcolumn=yes
-set colorcolumn=80
+"set colorcolumn=80
+"hi ColorColumn ctermbg=DarkGrey
 
-highlight CursorLineNr ctermfg=Red
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight CursorLineNr ctermfg=red
+highlight ExtraWhitespace ctermbg=red guibg=Green
 match ExtraWhitespace /\s\+$/
 
 " Jump to last position when reopening a file
@@ -84,6 +87,8 @@ nnoremap <Leader>t  :terminal<CR>
 nnoremap <Leader>wf :echo @%<CR>
 nnoremap <Leader>af :ls<CR>
 nnoremap <Leader>no :noh<CR>
+nnoremap <Leader>cc :set colorcolumn=80<CR>
+nnoremap <Leader>co :set colorcolumn=0<CR>
 nnoremap <M-LeftMouse> :bn<CR>
 nnoremap <M-RightMouse> :BB<CR>
 nnoremap <C-S-LeftMouse> :ls<CR>
@@ -98,5 +103,7 @@ noremap <Leader>P "+p<CR>
 " Delete all trailing whitespace in a file
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-
+"nnoremap <Leader>3 <Cmd>let @/='\<'.expand('<cword>').'\>'<bar>set hlsearch<CR>
+nnoremap @ <Cmd>let @/='\<'.expand('<cword>').'\>'<bar>set hlsearch<CR>
+"nnoremap <S> exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
